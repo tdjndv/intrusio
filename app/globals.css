@@ -1,26 +1,132 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-image: url('/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Optional: keeps it fixed on scroll */
+  font-family: sans-serif; /* Optional: set base font */
+}
+
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-size: 0.875rem; /* ~text-sm */
+  opacity: 0.7;
+}
+
+.lang-label {
+  text-transform: uppercase; /* force LANG to uppercase */
+  font-weight: bold;
+  font-style: italic;        /* optional bold */
+  letter-spacing: 0.05em;
+  color: #FFFFFF;
+}
+
+.display-text-small {
+  font-weight: 200;
+  font-size: 2rem;
+  color: white;
+}
+
+.display-text-big {
+  font-weight: bold;
+  font-size: 3rem;
+  color: white;
+}
+
+.score-label {
+  font-weight: bold;
+  font-style: italic;
+  color: white;               /* or use your theme color */
+}
+
+.overlay {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Transparent playboard style */
+.playboard {
+  background-color: rgba(13, 17, 23, 0.85); /* Semi-transparent white */
+  padding: 50px;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  max-width: 900px;
+  width: 90%;
+  border: 3px solid #2164cf
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  font-style: italic;
+  color:#2a79f7
+}
+
+h2 {
+  font-size: 2.5rem;
+  color:#e9ecf2;
+  font-weight: bold;
+}
+
+.language-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.selection-button {
+  padding: 10px 20px;
+  border: 2px solid #2164cf;
+  border-radius: 8px;
+  background-color: #0d1117;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+
+}
+
+.selection-button:hover {
+  color: #0d1117;
+  background-color: #2164cf;
+}
+
+.selection-button.selected {
+  background-color: #3dd8e0;
+}
+
+.green-button {
+  margin-top: 30px;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #27ae60;
+  color: white;
+  cursor: pointer;
+}
+
+.red-button {
+  margin-top: 30px;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+}
+
+.error-message {
+  color: red;
+  margin-top: 15px;
 }
