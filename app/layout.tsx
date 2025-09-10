@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SynMatch",
-  description: "A free flashcard game with 20,000+ words across 6 languages",
+  title: "SynMatch - Learn vocabularies by matching synonyms",
+  description: "Practice French, Spanish, German, Chinese, Russian, and English vocabulary with a fun free synonym matching game.",
 };
 
 export default function RootLayout({
