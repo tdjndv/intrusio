@@ -31,10 +31,23 @@ body {
   color: white;
 }
 
+.display-text-extra-small {
+  font-weight: 200;
+  font-size: 1.2rem;
+  color: white;
+}
+
 .display-text-big {
   font-weight: bold;
   font-size: 3rem;
   color: white;
+}
+
+.display-text-blue {
+  font-weight: bold;
+  font-style:italic;
+  color: #2164cf;
+  font-size:2rem;
 }
 
 .score-label {
@@ -129,4 +142,22 @@ h2 {
 .error-message {
   color: red;
   margin-top: 15px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  gap: 9rem; /* space between links */
+  margin-top: 3rem;
+  padding: 1rem;
+  border-top: 2px solid white;
+}
+.footer a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+.footer a:hover {
+  color: #2164cf;
 }

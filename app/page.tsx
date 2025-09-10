@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
+import Link from "next/link"
+
 export default function HomePage() {
   const router = useRouter();
   const [selectedLang, setSelectedLang] = useState<string | null>(null);
@@ -44,12 +46,17 @@ export default function HomePage() {
             </button>
           ))}
         </div>
-
+          
         <button className="green-button" onClick={startGame}>
           Start Game
         </button>
 
         {error && <p className="error-message">{error}</p>}
+        <footer className="footer">
+      <Link href="/about">About</Link>
+      <Link href="/privacy-policy">Privacy Policy</Link>
+      <Link href="/contact">Contact</Link>
+    </footer>
       </div>
     </div>
   );
