@@ -111,7 +111,7 @@ export default function GameClient({ lang, rows }: { lang: string; rows: Row[] }
                 return (
                   <button
                     key={i}
-                    onClick={() => {choose(opt); track("flashcard_next_click");}}
+                    onClick={() => {track("in game selection"); choose(opt);}}
                     disabled={!!chosen}
                     className={`selection-button ${status}`}
                   >

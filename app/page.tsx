@@ -5,6 +5,8 @@ import { useRouter } from 'next/navigation';
 
 import Link from "next/link"
 
+import {track} from '@vercel/analytics'
+
 export default function HomePage() {
   const router = useRouter();
   const [selectedLang, setSelectedLang] = useState<string | null>(null);
@@ -38,6 +40,7 @@ export default function HomePage() {
               key={code}
               className={`selection-button ${selectedLang === code ? 'selected' : ''}`}
               onClick={() => {
+                track("selected lang")
                 setSelectedLang(code);
                 setError(null);
               }}
