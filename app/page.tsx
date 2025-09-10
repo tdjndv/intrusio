@@ -26,6 +26,7 @@ export default function HomePage() {
       setError('Please select a language to start the game.');
       return;
     }
+    track("the selected language is " + selectedLang)
     router.push(`/game?lang=${selectedLang}`);
   };
 
@@ -40,7 +41,6 @@ export default function HomePage() {
               key={code}
               className={`selection-button ${selectedLang === code ? 'selected' : ''}`}
               onClick={() => {
-                track("selected lang")
                 setSelectedLang(code);
                 setError(null);
               }}
