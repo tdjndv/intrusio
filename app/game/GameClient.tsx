@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react'
 
 import { useRouter } from 'next/navigation'
 
+import {track} from '@vercel/analytics'
+
 type Row = { word: string; groupid: string }
 type Option = { word: string; groupid: string }
 type Round = { prompt: Option; options: Option[]; correctGroupId: string }
@@ -109,7 +111,7 @@ export default function GameClient({ lang, rows }: { lang: string; rows: Row[] }
                 return (
                   <button
                     key={i}
-                    onClick={() => choose(opt)}
+                    onClick={() => {choose(opt); track("flashcard_next_click");}}
                     disabled={!!chosen}
                     className={`selection-button ${status}`}
                   >
