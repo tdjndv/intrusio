@@ -12,6 +12,8 @@ export default function HomePage() {
   const [selectedLang, setSelectedLang] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
 
+  const [defaultLang, setDefaultLang] = useState("en");
+
   const languages = [
     { code: 'en', label: '🇬🇧 English' },
     { code: 'fr', label: '🇫🇷 Français' },
@@ -19,6 +21,8 @@ export default function HomePage() {
     { code: 'es', label: '🇪🇸 Español' },
     { code: 'ru', label: '🇷🇺 Русский' },
     { code: 'zh', label: '🇨🇳 中文' },
+    { code: 'ja', label: '🇯🇵 日本語' },
+    { code: 'ko', label: '🇰🇷 한국어' },
   ];
 
   const startGame = () => {
@@ -27,7 +31,7 @@ export default function HomePage() {
       return;
     }
     track("the selected language is " + selectedLang)
-    router.push(`/game?lang=${selectedLang}`);
+    router.push(`/game?lang=${selectedLang}&defaultLang=${defaultLang}`);
   };
 
   return (
@@ -53,6 +57,23 @@ export default function HomePage() {
         <button className="green-button" onClick={startGame}>
           Start Game
         </button>
+
+        <div>
+          <select 
+      value={defaultLang}
+        onChange={(e) => setDefaultLang(e.target.value)}
+      >
+        {languages.map((lang) => (
+          <option key={lang.code} value={lang.code}>
+            {lang.label}
+          </option>
+        ))}
+      </select>
+
+      <p className='display-text-extra-small'>
+        In Game Translation to : {defaultLang}
+      </p>
+        </div>
 
         {error && <p className="error-message">{error}</p>}
         <footer className="footer">

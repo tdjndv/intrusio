@@ -117,8 +117,29 @@ h2 {
   background-color: #3dd8e0;
 }
 
+
+select {
+  appearance: none;        /* Remove browser default */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  padding: 10px 14px;
+  font-size: 16px;
+  border: 2px solid #2164cf;
+  border-radius: 8px;
+  color: white;
+  background-color: #0d1117;
+
+  /* Add a little shadow */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+
+  /* Smooth transitions */
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
 .green-button {
   margin-top: 30px;
+  margin-bottom: 30px;
   padding: 12px 30px;
   font-size: 1.1rem;
   border: none;
